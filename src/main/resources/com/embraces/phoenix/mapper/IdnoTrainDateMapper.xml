@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.embraces.phoenix.mapper.IdnoTrainDateMapper">
+    <select id="listByRowkey" resultType="IdnoTrainDate">
+        SELECT * FROM "IDNOTRAINDATE" WHERE "rowkey"=#{rowkey}
+    </select>
+    <select id="listByRowkeyLike" resultType="IdnoTrainDate">
+        SELECT * FROM "IDNOTRAINDATE" WHERE "rowkey" like #{rowkey} || '%'
+    </select>
+  
+</mapper>
