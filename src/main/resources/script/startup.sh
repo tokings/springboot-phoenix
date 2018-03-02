@@ -4,12 +4,13 @@
 MEM_MAX=1303m
 MEM_MIN=1303m
 active=pro
+jar_name=springboot-phoenix.jar
 
 
 CRF_HOME=$(cd `dirname $0`;cd .. ;pwd)
 pidcount=`ps -ef|grep java|grep ${CRF_HOME}|wc -l`
 if [ "$pidcount" -le 0 ]; then
-	nohup java -Xms${MEM_MAX} -Xmx${MEM_MIN} -Dspring.profiles.active=${active} -jar ${CRF_HOME}/phoenix-0.0.1.jar >/dev/null 2>&1 &
+	nohup java -Xms${MEM_MAX} -Xmx${MEM_MIN} -Dspring.profiles.active=${active} -jar ${CRF_HOME}/${jar_name} >/dev/null 2>&1 &
 	sleep 2
 	pid=`ps -ef|grep java|grep ${CRF_HOME}|awk '{print $2}'`
 	if [ -z "$pid" ]; then
