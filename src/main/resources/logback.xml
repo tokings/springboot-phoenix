@@ -12,6 +12,8 @@
 	<root level="INFO">
 		<appender-ref ref="file" />
 	</root>
+
+<!-- 	<logger name="com.embraces.phoenix" level="INFO" /> -->
 	<logger name="ch.qos.logback" level="ERROR" />
 	<logger name="org.springframework" level="ERROR" />
 
